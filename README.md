@@ -1,5 +1,7 @@
 # my-first-ai-web
 
+**Date:** 2026-10-24
+
 A tiny static page built by an AI agent during **Homework 01, Exercise 1.2** — the exercise
 about letting an agent drive the Git and GitHub cycle while the student approves, reviews and
 merges.
