@@ -8,12 +8,28 @@ const MESSAGES = [
   "You can keep clicking; the message keeps changing."
 ];
 
+const DEFAULT_TEXT = "The message has not changed yet.";
+
 const messageEl = document.getElementById("message");
 const changeButton = document.getElementById("change-button");
+const resetButton = document.getElementById("reset-button");
 
 let index = -1;
 
+function render() {
+  messageEl.textContent = index === -1 ? DEFAULT_TEXT : MESSAGES[index];
+  // Reset is only useful once the message has actually changed.
+  resetButton.disabled = index === -1;
+}
+
 changeButton.addEventListener("click", () => {
   index = (index + 1) % MESSAGES.length;
-  messageEl.textContent = MESSAGES[index];
+  render();
 });
+
+resetButton.addEventListener("click", () => {
+  index = -1;
+  render();
+});
+
+render();
