@@ -71,8 +71,23 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   background: var(--accent-dark);
+}
+
+button.secondary {
+  background: #ffffff;
+  color: var(--ink);
+  border-color: #cbd5e1;
+}
+
+button.secondary:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 button:focus-visible {
